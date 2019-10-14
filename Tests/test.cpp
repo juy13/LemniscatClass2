@@ -8,6 +8,7 @@ TEST(LemConst, DefConst)
 	ASSERT_EQ(1, a1.get_c());
 	ASSERT_NEAR(1.2732, a1.SqLem(), err);
 }
+
 TEST(LemConst, InitConst)
 {
 	const double err = 0.001;
@@ -26,6 +27,7 @@ TEST(LemConst, TestExc)
 	ASSERT_ANY_THROW(a4.RadOfRad(-2));
 	ASSERT_ANY_THROW(a4.SqPolarSec(0));
 }
+
 TEST(LemConst, Setters)
 {
 	LemniscatClass a5;
@@ -42,34 +44,16 @@ TEST(LemMethods, Parameters)
 	ASSERT_NEAR(0.391, a.Len2Cent(1), err);
 	ASSERT_NEAR(1.704, a.RadOfAngle(1), err);
 	ASSERT_NEAR(0.666, a.RadOfRad(1), err);
-	/*ASSERT_NEAR(a.getC()*a.getC() / 2 * sin(2 * 1), a.areaA(1), err);
-	ASSERT_NEAR(0.5*a.getC()*a.getC(), a.area(), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 34))), a.dist(34), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 57) / (3 * cos(2 * 57)))), a.radA(57), err);
-	ASSERT_NEAR(2 * a.getC()*a.getC() / (3 * 0.1), a.radR(0.1), err);
-	ASSERT_NEAR(a.getC()*a.getC() / 2 * sin(2 * 0.002), a.areaA(0.002), err);
-	a.setC(100);
-	ASSERT_NEAR(0.5*a.getC()*a.getC(), a.area(), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 1))), a.dist(1), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 1) / (3 * cos(2 * 1)))), a.radA(1), err);
-	ASSERT_NEAR(2 * a.getC()*a.getC() / (3 * 1), a.radR(1), err);
-	ASSERT_NEAR(a.getC()*a.getC() / 2 * sin(2 * 1), a.areaA(1), err);
-	ASSERT_NEAR(0.5*a.getC()*a.getC(), a.area(), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 34))), a.dist(34), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 57) / (3 * cos(2 * 57)))), a.radA(57), err);
-	ASSERT_NEAR(2 * a.getC()*a.getC() / (3 * 0.1), a.radR(0.1), err);
-	ASSERT_NEAR(a.getC()*a.getC() / 2 * sin(2 * 0.002), a.areaA(0.002), err);
-	a.setC(0.1);
-	ASSERT_NEAR(0.5*a.getC()*a.getC(), a.area(), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 1))), a.dist(1), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 1) / (3 * cos(2 * 1)))), a.radA(1), err);
-	ASSERT_NEAR(2 * a.getC()*a.getC() / (3 * 1), a.radR(1), err);
-	ASSERT_NEAR(a.getC()*a.getC() / 2 * sin(2 * 1), a.areaA(1), err);
-	ASSERT_NEAR(0.5*a.getC()*a.getC(), a.area(), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 34))), a.dist(34), err);
-	ASSERT_NEAR(sqrt(abs(2 * a.getC()*a.getC()*cos(2 * 57) / (3 * cos(2 * 57)))), a.radA(57), err);
-	ASSERT_NEAR(2 * a.getC()*a.getC() / (3 * 0.1), a.radR(0.1), err);
-	*///ASSERT_NEAR(a.getC()*a.getC() / 2 * sin(2 * 0.002), a.areaA(0.002), err);
+	ASSERT_NEAR(1.310, a.Len2Cent(34), err);
+	ASSERT_NEAR(0.486, a.RadOfAngle(57), err);
+	ASSERT_NEAR(6.666, a.RadOfRad(0.1), err);
+	ASSERT_NEAR(0.496, a.SqPolarSec(60), err);
+	a.set_c(100);
+	ASSERT_NEAR(12732.395, a.SqLem(), err);
+	ASSERT_NEAR(120.073, a.Len2Cent(10), err);
+	ASSERT_NEAR(49.357, a.RadOfAngle(15), err);
+	ASSERT_NEAR(4444.444, a.RadOfRad(1.5), err);
+	ASSERT_NEAR(3737.889, a.SqPolarSec(30), err);
 }
 
 
